@@ -1,0 +1,4 @@
+module: "telegraf"
+schedule: "* * * * * *"
+task:
+  command: "nextWeekImage"

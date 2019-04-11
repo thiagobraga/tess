@@ -1,5 +1,5 @@
 {
-  "name": "tess",
+  "name": "tess-core",
   "version": "0.0.1",
   "description": "Tess is a robot helper that loves the human kind.",
   "main": "index.js",
@@ -9,7 +9,10 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "lerna": "^3.13.1"
+  "dependencies": {
+    "express": "^4.16.4",
+    "js-yaml": "^3.13.1",
+    "tess-calendar": "^0.0.1",
+    "tess-telegraf": "^0.0.1"
   }
 }

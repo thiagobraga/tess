@@ -1,0 +1,19 @@
+# template #
+# actions:
+#  - type: "command"
+#    params: # the order of the params matters
+#    - name: "name_of_the_command" # without spaces
+#      script: "nextWeekImage" # name of the js file inside scripts folder
+
+actions:
+  - type: "help"
+    params:
+      script: "help"
+  - type: "command"
+    params:
+      name: "calendar"
+      script: "nextWeekImage"
+  - type: "command"
+    params:
+      name: "dodo"
+      script: "dodo"

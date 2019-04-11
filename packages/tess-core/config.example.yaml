@@ -1,0 +1,9 @@
+services:
+  - name: tess
+    module: app.js
+    conf: 
+      port: 3000
+  - name: tess-telegraf
+    module: services/telegraf/app.js
+    conf:
+      token: "TELEGRAM_TOKEN"
