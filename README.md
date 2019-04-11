@@ -2,14 +2,11 @@
 _Tess is a robot helper that loves the human kind._
 
 
-## Install packages in all packages/directories
-_NOTE: This project will use lerna in the future_
-
+## Install lerna and bootstrap project
+In the root repository:
 ```
-cd /path/to/tess
 npm install
-cd /path/to/tess/packages/tess-calendar
-npm install
+lerna bootstrap
 ```
 
 NOTE: This versions download headless chromium binary, just to make it easier to have the same environment accross differente workspaces. **It's 109.8 MB of extra download, keep this in mind.**
@@ -44,16 +41,27 @@ That's temporary, really.
 
 Copy the code and paste it in the terminal. You will see that a list is loaded right after you finish the setup. If you see nothing or get an error, fill an issue.
 
+## Setting config.yaml for tess-core
+```
+cd packages/tess-core
+cp config.example.yaml config.yaml
+```
+
+Add the Telegram token for under tess-telegraf service configuration.
+
 ## Running after auth
 
 In the root repository
 ```
+cd packages/tess-core
 npm start
 ```
 
 Go to http://localhost:3000/nextweek/html. You should see a simple 1 week calendar.
 
 Go to http://localhost:3000/nextweek/png. You should have the same calendar as an image.
+
+Interact with tess on Telegram.
 
 ## TODO
 
