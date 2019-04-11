@@ -24,7 +24,7 @@ class Renderer {
         try {
             const html = await getHtml();
             page = await this.createPage(html)
-            const buffer = await page.screenshot({path: 'screenshot.png', fullPage: true});
+            const buffer = await page.screenshot( { fullPage: true } );
             
             return buffer;
         } finally {
@@ -48,7 +48,6 @@ async function getHtml() {
     const auth = await gcalendar.authenticate();
     let events = await gcalendar.nextWeek(auth);
     events = await parseEvents(events);
-    console.log(events);
     const html = await readFile(`${path.join(__dirname, 'calendar.html')}`, {encoding: 'utf8'});
 
     let doc = domino.createDocument(html);

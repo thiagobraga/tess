@@ -28,7 +28,6 @@ const authorize = async (credentials) => {
         // Check if we have previously stored a token.
         token = await readFile(TOKEN_PATH, 'utf8');
         oAuth2Client.setCredentials(JSON.parse(token));
-        console.log('authorize', typeof oAuth2Client);
         return oAuth2Client;
     } catch (err) {
         if (err) return await getAccessToken(oAuth2Client);
@@ -79,7 +78,6 @@ const nextWeek = async (auth) => {
 
         const events = res.data.items;
           if (events.length) {
-            console.log('count', events.length);
             return events;
         } else {
             console.log('No upcoming events found.');
