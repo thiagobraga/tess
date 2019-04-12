@@ -10,7 +10,18 @@ const loadActions = async () => {
     const conf = yaml.load(fs.readFileSync(`${basedir}/config.yml`, 'utf8'));
     conf.actions.forEach((action) => {
         const params = Object.keys(action.params).map(key => {
-            return key === 'script' ? require(`${basedir}/scripts/${action.params[key]}`) : action.params[key];
+            switch (key){
+                case 'script':
+                    return require(`${basedir}/scripts/${action.params[key]}`)
+                    break;
+                case 'reply':
+                    const reply = require(`${basedir}/scripts/command-reply`);
+                    return reply(action.params.reply);
+                    break;
+                default:
+                    return action.params[key]
+                    break;
+            }
         });
         actions.push({
             type: action.type,
