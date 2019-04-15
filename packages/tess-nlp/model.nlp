@@ -1,0 +1,435 @@
+{
+  "settings": {
+    "languages": [
+      "pt"
+    ]
+  },
+  "nluManager": {
+    "settings": {},
+    "languages": [
+      "pt"
+    ],
+    "intentDomains": {},
+    "domainManagers": {
+      "pt": {
+        "settings": {
+          "language": "pt"
+        },
+        "language": "pt",
+        "nluClassName": "BrainNLU",
+        "useMasterDomain": true,
+        "trainByDomain": true,
+        "keepStopwords": true,
+        "stemDict": {
+          "calendari,me,mostr,o": {
+            "domain": "default",
+            "intent": "action.calendar"
+          },
+          "calendari,favor,o,por": {
+            "domain": "default",
+            "intent": "action.calendar"
+          },
+          "acontec,essa,o,que,seman,vai": {
+            "domain": "default",
+            "intent": "action.calendar"
+          },
+          "essa,seman": {
+            "domain": "default",
+            "intent": "action.calendar"
+          },
+          "event,os,prox,qua": {
+            "domain": "default",
+            "intent": "action.calendar"
+          }
+        },
+        "intentDict": {
+          "action.calendar": "default"
+        },
+        "useStemDict": true,
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "language": "pt"
+            },
+            "language": "pt",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "default",
+                "utterance": [
+                  "mostr",
+                  "me",
+                  "o",
+                  "calendari"
+                ],
+                "tokens": [
+                  "mostr",
+                  "me",
+                  "o",
+                  "calendari"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "o",
+                  "calendari",
+                  "por",
+                  "favor"
+                ],
+                "tokens": [
+                  "o",
+                  "calendari",
+                  "por",
+                  "favor"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "o",
+                  "que",
+                  "vai",
+                  "acontec",
+                  "essa",
+                  "seman"
+                ],
+                "tokens": [
+                  "o",
+                  "que",
+                  "vai",
+                  "acontec",
+                  "essa",
+                  "seman"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "essa",
+                  "seman"
+                ],
+                "tokens": [
+                  "essa",
+                  "seman"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "qua",
+                  "os",
+                  "prox",
+                  "event"
+                ],
+                "tokens": [
+                  "qua",
+                  "os",
+                  "prox",
+                  "event"
+                ]
+              }
+            ],
+            "features": {
+              "mostr": 1,
+              "me": 1,
+              "o": 3,
+              "calendari": 2,
+              "por": 1,
+              "favor": 1,
+              "que": 1,
+              "vai": 1,
+              "acontec": 1,
+              "essa": 2,
+              "seman": 2,
+              "qua": 1,
+              "os": 1,
+              "prox": 1,
+              "event": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.4,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 1e-7,
+                  "maxDecimals": 9,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "sizes": [
+                  15,
+                  1
+                ],
+                "layers": [
+                  {
+                    "mostr": {},
+                    "me": {},
+                    "o": {},
+                    "calendari": {},
+                    "por": {},
+                    "favor": {},
+                    "que": {},
+                    "vai": {},
+                    "acontec": {},
+                    "essa": {},
+                    "seman": {},
+                    "qua": {},
+                    "os": {},
+                    "prox": {},
+                    "event": {}
+                  },
+                  {
+                    "default": {
+                      "bias": 7.102723121643066,
+                      "weights": {
+                        "mostr": 2.324566602706909,
+                        "me": 2.324566602706909,
+                        "o": 3.5819790363311768,
+                        "calendari": 4.650784015655518,
+                        "por": 2.3262150287628174,
+                        "favor": 2.3262150287628174,
+                        "que": -1.0688029527664185,
+                        "vai": -1.0688029527664185,
+                        "acontec": -1.0688029527664185,
+                        "essa": 6.323365211486816,
+                        "seman": 6.323365211486816,
+                        "qua": 3.229667901992798,
+                        "os": 3.229667901992798,
+                        "prox": 3.229667901992798,
+                        "event": 3.229667901992798
+                      }
+                    }
+                  }
+                ],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "deltaErrorThresh": 1e-7,
+                  "learningRate": 0.4,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.05
+                }
+              }
+            }
+          },
+          "default": {
+            "settings": {
+              "language": "pt"
+            },
+            "language": "pt",
+            "keepStopwords": true,
+            "docs": [
+              {
+                "intent": "action.calendar",
+                "utterance": [
+                  "mostr",
+                  "me",
+                  "o",
+                  "calendari"
+                ],
+                "tokens": [
+                  "mostr",
+                  "me",
+                  "o",
+                  "calendari"
+                ]
+              },
+              {
+                "intent": "action.calendar",
+                "utterance": [
+                  "o",
+                  "calendari",
+                  "por",
+                  "favor"
+                ],
+                "tokens": [
+                  "o",
+                  "calendari",
+                  "por",
+                  "favor"
+                ]
+              },
+              {
+                "intent": "action.calendar",
+                "utterance": [
+                  "o",
+                  "que",
+                  "vai",
+                  "acontec",
+                  "essa",
+                  "seman"
+                ],
+                "tokens": [
+                  "o",
+                  "que",
+                  "vai",
+                  "acontec",
+                  "essa",
+                  "seman"
+                ]
+              },
+              {
+                "intent": "action.calendar",
+                "utterance": [
+                  "essa",
+                  "seman"
+                ],
+                "tokens": [
+                  "essa",
+                  "seman"
+                ]
+              },
+              {
+                "intent": "action.calendar",
+                "utterance": [
+                  "qua",
+                  "os",
+                  "prox",
+                  "event"
+                ],
+                "tokens": [
+                  "qua",
+                  "os",
+                  "prox",
+                  "event"
+                ]
+              }
+            ],
+            "features": {
+              "mostr": 1,
+              "me": 1,
+              "o": 3,
+              "calendari": 2,
+              "por": 1,
+              "favor": 1,
+              "que": 1,
+              "vai": 1,
+              "acontec": 1,
+              "essa": 2,
+              "seman": 2,
+              "qua": 1,
+              "os": 1,
+              "prox": 1,
+              "event": 1
+            },
+            "isEditing": false,
+            "className": "BrainNLU",
+            "classifier": {
+              "className": "BrainClassifier",
+              "settings": {
+                "config": {
+                  "activation": "leaky-relu",
+                  "hiddenLayers": [],
+                  "iterations": 20000,
+                  "learningRate": 0.4,
+                  "errorThresh": 0.00005,
+                  "momentum": 0.5,
+                  "deltaErrorThresh": 1e-7,
+                  "maxDecimals": 9,
+                  "timeout": 120000
+                }
+              },
+              "labels": [],
+              "network": {
+                "sizes": [
+                  15,
+                  1
+                ],
+                "layers": [
+                  {
+                    "mostr": {},
+                    "me": {},
+                    "o": {},
+                    "calendari": {},
+                    "por": {},
+                    "favor": {},
+                    "que": {},
+                    "vai": {},
+                    "acontec": {},
+                    "essa": {},
+                    "seman": {},
+                    "qua": {},
+                    "os": {},
+                    "prox": {},
+                    "event": {}
+                  },
+                  {
+                    "action.calendar": {
+                      "bias": 7.102723121643066,
+                      "weights": {
+                        "mostr": 2.324566602706909,
+                        "me": 2.324566602706909,
+                        "o": 3.5819790363311768,
+                        "calendari": 4.650784015655518,
+                        "por": 2.3262150287628174,
+                        "favor": 2.3262150287628174,
+                        "que": -1.0688029527664185,
+                        "vai": -1.0688029527664185,
+                        "acontec": -1.0688029527664185,
+                        "essa": 6.323365211486816,
+                        "seman": 6.323365211486816,
+                        "qua": 3.229667901992798,
+                        "os": 3.229667901992798,
+                        "prox": 3.229667901992798,
+                        "event": 3.229667901992798
+                      }
+                    }
+                  }
+                ],
+                "trainOpts": {
+                  "iterations": 20000,
+                  "errorThresh": 0.00005,
+                  "deltaErrorThresh": 1e-7,
+                  "learningRate": 0.4,
+                  "momentum": 0.5,
+                  "leakyReluAlpha": 0.05
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "nerManager": {
+    "settings": {},
+    "threshold": 0.8,
+    "builtins": [
+      "Number",
+      "Ordinal",
+      "Percentage",
+      "Age",
+      "Currency",
+      "Dimension",
+      "Temperature",
+      "DateTime",
+      "PhoneNumber",
+      "IpAddress",
+      "Boolean",
+      "Email",
+      "Hashtag",
+      "URL"
+    ],
+    "namedEntities": {}
+  },
+  "slotManager": {},
+  "responses": {
+    "pt": {
+      "action.calendar": [
+        {
+          "response": "Um momento, vou verificar a agenda para você"
+        }
+      ]
+    }
+  }
+}

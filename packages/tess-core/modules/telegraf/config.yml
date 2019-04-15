@@ -37,3 +37,11 @@ actions:
     params:
       name: "ceja"
       reply: "Pede pra galera curtir!"
+  - type: "on"
+    params:
+      user: "message"
+      script: nlp-action
+  - type: "command"
+    params:
+      name: "tess"
+      script: nlp-action

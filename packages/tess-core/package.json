@@ -13,6 +13,7 @@
     "express": "^4.16.4",
     "js-yaml": "^3.13.1",
     "tess-calendar": "^0.0.1",
+    "tess-nlp": "^0.0.1",
     "tess-telegraf": "^0.0.1"
   }
 }
