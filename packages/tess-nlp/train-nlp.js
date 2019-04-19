@@ -23,22 +23,37 @@
 
 const fs = require('fs');
 
-module.exports = async function trainnlp(manager) {
-  if (fs.existsSync('./model.nlp')) {
-    manager.load('./model.nlp');
+module.exports = async function trainnlp(trainedModelDir, manager) {
+  console.log(`${trainedModelDir}/model.nlp`);
+  if (fs.existsSync(`${trainedModelDir}/model.nlp`)) {
+    manager.load(`${trainedModelDir}/model.nlp`);
     return;
   }
-  manager.addDocument('pt', 'mostre-me o calendário', 'nextWeekImage');
-  manager.addDocument('pt', 'o calendário por favor', 'nextWeekImage');
-  manager.addDocument('pt', 'o que vai acontecer essa semana', 'nextWeekImage');
-  manager.addDocument('pt', 'essa semana', 'nextWeekImage');
-  manager.addDocument('pt', 'quais os próximos eventos', 'nextWeekImage');
+  manager.addDocument('pt', 'mostre-me o calendário', 'action.nextWeekImage');
+  manager.addDocument('pt', 'o calendário por favor', 'action.nextWeekImage');
+  manager.addDocument('pt', 'o que vai acontecer essa semana', 'action.nextWeekImage');
+  manager.addDocument('pt', 'quais os próximos eventos', 'action.nextWeekImage');
+  manager.addDocument('pt', 'calendário', 'action.nextWeekImage');
+
+  manager.addDocument('pt', 'Qual o próximo evento', 'action.nextMeetingLink');
+  manager.addDocument('pt', 'Me dê o link do próximo evento', 'action.nextMeetingLink');
+  manager.addDocument('pt', 'link da próxima reunião', 'action.nextMeetingLink');
+  manager.addDocument('pt', 'Quero saber da próxima reunião', 'action.nextMeetingLink');
+  manager.addDocument('pt', 'qual o próximo evento', 'action.nextMeetingLink');
+
+  manager.addDocument('pt', 'olá', 'greeting');
+  manager.addDocument('pt', 'oi', 'greeting');
+  manager.addDocument('pt', 'yo', 'greeting');
+  manager.addDocument('pt', 'salve', 'greeting');
+
   const hrstart = process.hrtime();
   await manager.train();
   const hrend = process.hrtime(hrstart);
   console.info('Trained (hr): %ds %dms', hrend[0], hrend[1] / 1000000);
 
-  manager.addAnswer('pt', 'nextWeekImage', "Um momento, vou verificar a agenda para você");
+  manager.addAnswer('pt', 'action.nextWeekImage', "Um momento, vou verificar a agenda para você");
+  manager.addAnswer('pt', 'action.nextMeetingLink', "Aqui está a descrição do próximo evento");
+  manager.addAnswer('pt', 'greeting', "Olá, tudo bom?");
   
   manager.save('./model.nlp');
 };

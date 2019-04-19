@@ -27,17 +27,18 @@ const trainnlp = require('./train-nlp');
 const threshold = 0.5;
 const nlpManager = new NlpManager({ languages: ['pt'] });
 
-module.exports = async (message) => {
-  await trainnlp(nlpManager);
+module.exports = async (trainedModelDir, message) => {
+  await trainnlp(trainedModelDir, nlpManager);
   if (message){
     const result = await nlpManager.process(message);
     const answer =
       result.score > threshold && result.answer
         ? result.answer
         : "Desculpa, não entendi";
+        console.log(result);
     return {
       'msg': answer,
-      'action': result.intent,
+      'action': result.intent.startsWith('action') ? result.intent.replace(/action\./, "") : null,
     }
   }
 };
