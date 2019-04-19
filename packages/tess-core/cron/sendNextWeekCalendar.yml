@@ -8,9 +8,9 @@ tessModule: "telegraf"
 # seconds __  | | | | | (optional)
 #           | | | | | |
 #          "* * * * * *"   
-schedule: "*/15 * * * * *" 
+schedule: "0 9 * * 1" 
 tasks:
   - script: "nextWeekImage"
     parameters: # the order matters
       chatId: -290369884 # chat ID
-      msg: "Testando envio de foto a cada 15 segundos" # message
+      msg: "E aí Djows, segue o calendário da semana" # message

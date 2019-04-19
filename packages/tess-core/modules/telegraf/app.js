@@ -28,10 +28,24 @@ const loadActions = async () => {
     return actions;
 }
 
-module.exports = async (options) => {
+
+const initApp = async (options) => {
     options.actions = await loadActions();
-    const tess = await telegraf(options);
-    await tess.launch();
-    console.log("tess is listening to Telegram");
-    return tess;
+
+    const app = await telegraf(options);
+
+    app.serviceName = options.name;      // this app's config options
+    app.config = options.config;      // this app's config options
+    app.logger = options.logger;    // the logging device
+    app.metrics = options.metrics;  // the metrics
+
+    return app;
+}
+
+module.exports = async (options) => {
+
+    const app = await initApp(options);        
+    await app.launch();
+    app.logger.log('info', "tess is listening to Telegram");
+    return app;
 };

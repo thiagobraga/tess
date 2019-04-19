@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 'use strict';
 
-const ServiceRunner = require('./lib/service-runner');
+const ServiceRunner = require('service-runner');
+const util = require('./lib/util');
+
 let runner = new ServiceRunner();
 
 (async () => {
-    await runner.start();
-    if (runner.conf.enable_cron){
-        await runner.loadCron();
-    }
+    const services = await runner.start();
+    await util.loadCron(services.shift());
+    // if (runner.conf.enable_cron){
+    //     await runner.loadCron();
+    // }
 })()

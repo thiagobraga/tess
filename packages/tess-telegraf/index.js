@@ -2,7 +2,7 @@ const Telegraf = require('telegraf')
 const fs = require('fs');
 
 const initBot = async (options) => {
-    const bot = new Telegraf(options.conf.token)
+    const bot = new Telegraf(options.config.token)
 
     // Load actions from options
     options.actions.map((action) => {

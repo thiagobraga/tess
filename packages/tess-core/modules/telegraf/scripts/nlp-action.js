@@ -3,6 +3,7 @@ const path = require('path')
 const moduleDir = path.join(__dirname, '../..', '/node-nlp')
 
 module.exports = async (ctx) => {
+    console.log(ctx.update.messsage.chat);
     const reaction = await nlp(moduleDir, ctx.message.text);
     if (reaction){
         if (reaction.action && reaction.action !== 'None'){

@@ -5,6 +5,6 @@ Tess is the job/scheduler that use these functions to execute some task
 [] Google Calendar configuration file in tess-core
 [] Setup page for Google API authentication
 [] Error Handling
-[] Logger
+[X] Logger
 [] Persistence layer for job scheduler
 [] Metrics
