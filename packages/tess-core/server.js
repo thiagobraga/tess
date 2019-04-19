@@ -8,7 +8,7 @@ let runner = new ServiceRunner();
 
 (async () => {
     const services = await runner.start();
-    if (runner.conf.enable_cron){
+    if (process.env.ENABLE_CRON){
         await util.loadCron(services.shift());
     }
 })()
