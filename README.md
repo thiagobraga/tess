@@ -62,7 +62,3 @@ Go to http://localhost:3000/nextweek/html. You should see a simple 1 week calend
 Go to http://localhost:3000/nextweek/png. You should have the same calendar as an image.
 
 Interact with tess on Telegram.
-
-## TODO
-
-Tess will be a configurable service for running several background tasks and will have the ability to communicate through WhatsApp, Telegram and Slack.
