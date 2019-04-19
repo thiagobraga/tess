@@ -39,7 +39,7 @@ const getNextMeetingLink = async (auth) => {
             return {
                 hangoutLink: event.hangoutLink,
                 summary: event.summary,
-                confirmedAttendees: event.attendees.filter(attendee => {
+                confirmedAttendees: event.attendees && event.attendees.filter(attendee => {
                     return attendee.responseStatus === 'accepted'
                 }),
             };
