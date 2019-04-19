@@ -15,7 +15,6 @@ const router = require('../lib/util').router();
 router.get('/', async (req, res) => {
     const auth = await calendar.authenticate(GCALENDAR_CREDENTIALS, GCALENDAR_TOKEN);
     const meetingLink = await calendar.nextMeetingLink(auth);
-    console.log(meetingLink);
     res.writeHead(200);
     res.end(JSON.stringify(meetingLink));
 });

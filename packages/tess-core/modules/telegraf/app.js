@@ -45,7 +45,12 @@ const initApp = async (options) => {
 module.exports = async (options) => {
 
     const app = await initApp(options);        
-    await app.launch();
-    app.logger.log('info', "tess is listening to Telegram");
+    try {
+        await app.launch();
+        app.logger.log('info', `${app.serviceName} with PID ${process.pid} is listening on Telegram API`);
+    } catch(err) {
+        app.logger.log('error', `${app.serviceName} failed to load`);
+        app.logger.log('error', err);
+    }
     return app;
 };

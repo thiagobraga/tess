@@ -3,5 +3,5 @@ config.yaml
 static/*
 token.json
 credentials.json
-model.nlp
+*/model.nlp
 npm-debug.log

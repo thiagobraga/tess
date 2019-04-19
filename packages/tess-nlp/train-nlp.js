@@ -24,7 +24,6 @@
 const fs = require('fs');
 
 module.exports = async function trainnlp(trainedModelDir, manager) {
-  console.log(`${trainedModelDir}/model.nlp`);
   if (fs.existsSync(`${trainedModelDir}/model.nlp`)) {
     manager.load(`${trainedModelDir}/model.nlp`);
     return;
@@ -55,5 +54,5 @@ module.exports = async function trainnlp(trainedModelDir, manager) {
   manager.addAnswer('pt', 'action.nextMeetingLink', "Aqui está a descrição do próximo evento");
   manager.addAnswer('pt', 'greeting', "Olá, tudo bom?");
   
-  manager.save('./model.nlp');
+  manager.save(`${trainedModelDir}/model.nlp`);
 };

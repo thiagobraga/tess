@@ -13,7 +13,7 @@ tasks:
   #   parameters: # the order matters
   #     chatId: -290369884 # chat ID
   #     msg: "Testando cron a cada 15 minutos" # message
-  # - script: "sendMessage"
-  #   parameters: # the order matters
-  #     chatId: -382955383 # chat ID
-  #     msg: "Testando cron a cada 15 minutos" # message
+  - script: "sendMessage"
+    parameters: # the order matters
+      chatId: -382955383 # chat ID
+      msg: "Testando cron a cada 15 minutos" # message

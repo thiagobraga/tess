@@ -45,6 +45,7 @@ const loadCron = async (services, logger) => {
                     if (script){
                         scheduler.scheduleJob(schedule, function(){
                             script(service, task.parameters);
+                            service.logger.log('info', `cron ${task['script']} executed`)
                         });
                         service.logger.log('info', `loading cron: ${task['script']} with schedule ${schedule}`)
                     }

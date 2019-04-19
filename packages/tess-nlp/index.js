@@ -35,7 +35,6 @@ module.exports = async (trainedModelDir, message) => {
       result.score > threshold && result.answer
         ? result.answer
         : "Desculpa, não entendi";
-        console.log(result);
     return {
       'msg': answer,
       'action': result.intent.startsWith('action') ? result.intent.replace(/action\./, "") : null,
