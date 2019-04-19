@@ -4,8 +4,9 @@ const express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const path = require('path');
+const schedule = require('node-schedule');
 
-function loadRoutes(app, dir) {
+const loadRoutes = (app, dir) => {
     return new Promise((resolve, reject) => {
         fs.readdirSync(dir).map((fname) => {
             const resolvedPath = path.resolve(dir, fname);
@@ -63,7 +64,7 @@ function initApp(options) {
 
 module.exports = (options) => {
     // TODO: Promisify it all
-    initApp(options)
+    return initApp(options)
     .then(app => loadRoutes(app, './routes'))
     .then(createServer)
 };

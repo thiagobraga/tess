@@ -12,30 +12,17 @@ const router = require('../lib/util').router();
 /**
  * GET {domain}/nextweek/html
  */
-router.get('/html', async (req, res) => {
+router.get('/', async (req, res) => {
     const auth = await calendar.authenticate(GCALENDAR_CREDENTIALS, GCALENDAR_TOKEN);
-    const html = await calendar.nextWeekHtml(auth);
+    const meetingLink = await calendar.nextMeetingLink(auth);
+    console.log(meetingLink);
     res.writeHead(200);
-    res.write(html, "binary");
-    res.end();
+    res.end(JSON.stringify(meetingLink));
 });
-
-/**
- * GET {domain}/nextweek/png
- */
-router.get('/png',  async (req, res) => {
-    const auth = await calendar.authenticate(GCALENDAR_CREDENTIALS, GCALENDAR_TOKEN);
-    const image = await calendar.nextWeekImage(auth);
-    res.set({
-        'Content-Type': 'image/png',
-        'Content-Length': image.length,
-      }).send(image);
-});
-
 
 module.exports = function(appObj) {
     return {
-        path: '/nextweek',
+        path: '/meeting-link',
         api_version: 1,
         router
     };

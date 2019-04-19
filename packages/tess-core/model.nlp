@@ -23,27 +23,61 @@
         "stemDict": {
           "calendari,me,mostr,o": {
             "domain": "default",
-            "intent": "nextWeekImage"
+            "intent": "action.nextWeekImage"
           },
           "calendari,favor,o,por": {
             "domain": "default",
-            "intent": "nextWeekImage"
+            "intent": "action.nextWeekImage"
           },
           "acontec,essa,o,que,seman,vai": {
             "domain": "default",
-            "intent": "nextWeekImage"
-          },
-          "essa,seman": {
-            "domain": "default",
-            "intent": "nextWeekImage"
+            "intent": "action.nextWeekImage"
           },
           "event,os,prox,qua": {
             "domain": "default",
-            "intent": "nextWeekImage"
+            "intent": "action.nextWeekImage"
+          },
+          "calendari": {
+            "domain": "default",
+            "intent": "action.nextWeekImage"
+          },
+          "de,do,event,link,me,o,proxim": {
+            "domain": "default",
+            "intent": "action.nextMeetingLink"
+          },
+          "da,link,proxim,reunia": {
+            "domain": "default",
+            "intent": "action.nextMeetingLink"
+          },
+          "da,proxim,quer,reunia,sab": {
+            "domain": "default",
+            "intent": "action.nextMeetingLink"
+          },
+          "event,o,proxim,qual": {
+            "domain": "default",
+            "intent": "action.nextMeetingLink"
+          },
+          "ola": {
+            "domain": "default",
+            "intent": "greeting"
+          },
+          "oi": {
+            "domain": "default",
+            "intent": "greeting"
+          },
+          "yo": {
+            "domain": "default",
+            "intent": "greeting"
+          },
+          "salv": {
+            "domain": "default",
+            "intent": "greeting"
           }
         },
         "intentDict": {
-          "nextWeekImage": "default"
+          "action.nextWeekImage": "default",
+          "action.nextMeetingLink": "default",
+          "greeting": "default"
         },
         "useStemDict": true,
         "domains": {
@@ -106,46 +140,161 @@
               {
                 "intent": "default",
                 "utterance": [
-                  "essa",
-                  "seman"
+                  "qua",
+                  "os",
+                  "prox",
+                  "event"
                 ],
                 "tokens": [
-                  "essa",
-                  "seman"
+                  "qua",
+                  "os",
+                  "prox",
+                  "event"
                 ]
               },
               {
                 "intent": "default",
                 "utterance": [
-                  "qua",
-                  "os",
-                  "prox",
+                  "calendari"
+                ],
+                "tokens": [
+                  "calendari"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "me",
+                  "de",
+                  "o",
+                  "link",
+                  "do",
+                  "proxim",
                   "event"
                 ],
                 "tokens": [
-                  "qua",
-                  "os",
-                  "prox",
+                  "me",
+                  "de",
+                  "o",
+                  "link",
+                  "do",
+                  "proxim",
                   "event"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "link",
+                  "da",
+                  "proxim",
+                  "reunia"
+                ],
+                "tokens": [
+                  "link",
+                  "da",
+                  "proxim",
+                  "reunia"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "quer",
+                  "sab",
+                  "da",
+                  "proxim",
+                  "reunia"
+                ],
+                "tokens": [
+                  "quer",
+                  "sab",
+                  "da",
+                  "proxim",
+                  "reunia"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "qual",
+                  "o",
+                  "proxim",
+                  "event"
+                ],
+                "tokens": [
+                  "qual",
+                  "o",
+                  "proxim",
+                  "event"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "ola"
+                ],
+                "tokens": [
+                  "ola"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "oi"
+                ],
+                "tokens": [
+                  "oi"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "yo"
+                ],
+                "tokens": [
+                  "yo"
+                ]
+              },
+              {
+                "intent": "default",
+                "utterance": [
+                  "salv"
+                ],
+                "tokens": [
+                  "salv"
                 ]
               }
             ],
             "features": {
               "mostr": 1,
-              "me": 1,
-              "o": 3,
-              "calendari": 2,
+              "me": 2,
+              "o": 5,
+              "calendari": 3,
               "por": 1,
               "favor": 1,
               "que": 1,
               "vai": 1,
               "acontec": 1,
-              "essa": 2,
-              "seman": 2,
+              "essa": 1,
+              "seman": 1,
               "qua": 1,
               "os": 1,
               "prox": 1,
-              "event": 1
+              "event": 3,
+              "proxim": 4,
+              "de": 1,
+              "link": 2,
+              "do": 1,
+              "da": 2,
+              "reunia": 2,
+              "quer": 1,
+              "sab": 1,
+              "qual": 1,
+              "ola": 1,
+              "oi": 1,
+              "yo": 1,
+              "salv": 1
             },
             "isEditing": false,
             "className": "BrainNLU",
@@ -167,7 +316,7 @@
               "labels": [],
               "network": {
                 "sizes": [
-                  15,
+                  28,
                   1
                 ],
                 "layers": [
@@ -186,27 +335,53 @@
                     "qua": {},
                     "os": {},
                     "prox": {},
-                    "event": {}
+                    "event": {},
+                    "de": {},
+                    "link": {},
+                    "do": {},
+                    "proxim": {},
+                    "da": {},
+                    "reunia": {},
+                    "quer": {},
+                    "sab": {},
+                    "qual": {},
+                    "ola": {},
+                    "oi": {},
+                    "yo": {},
+                    "salv": {}
                   },
                   {
                     "default": {
-                      "bias": 7.102723121643066,
+                      "bias": 14.775877952575684,
                       "weights": {
-                        "mostr": 2.324566602706909,
-                        "me": 2.324566602706909,
-                        "o": 3.5819790363311768,
-                        "calendari": 4.650784015655518,
-                        "por": 2.3262150287628174,
-                        "favor": 2.3262150287628174,
-                        "que": -1.0688029527664185,
-                        "vai": -1.0688029527664185,
-                        "acontec": -1.0688029527664185,
-                        "essa": 6.323365211486816,
-                        "seman": 6.323365211486816,
-                        "qua": 3.229667901992798,
-                        "os": 3.229667901992798,
-                        "prox": 3.229667901992798,
-                        "event": 3.229667901992798
+                        "mostr": -0.2011101245880127,
+                        "me": -0.23363739252090454,
+                        "o": 0.9874727129936218,
+                        "calendari": 4.814226150512695,
+                        "por": -0.2275209277868271,
+                        "favor": -0.2275209277868271,
+                        "que": 0.8479664921760559,
+                        "vai": 0.8479664921760559,
+                        "acontec": 0.8479664921760559,
+                        "essa": 0.8479664921760559,
+                        "seman": 0.8479664921760559,
+                        "qua": 1.1839946508407593,
+                        "os": 1.1839946508407593,
+                        "prox": 1.1839946508407593,
+                        "event": 1.7521288394927979,
+                        "de": -0.032527290284633636,
+                        "link": 0.8688778877258301,
+                        "do": -0.032527290284633636,
+                        "proxim": 1.8581194877624512,
+                        "da": 1.2899850606918335,
+                        "reunia": 1.2899850606918335,
+                        "quer": 0.3885795474052429,
+                        "sab": 0.3885795474052429,
+                        "qual": 0.6006630063056946,
+                        "ola": 5.235757350921631,
+                        "oi": 5.219961643218994,
+                        "yo": 5.203758716583252,
+                        "salv": 5.186938285827637
                       }
                     }
                   }
@@ -230,7 +405,7 @@
             "keepStopwords": true,
             "docs": [
               {
-                "intent": "nextWeekImage",
+                "intent": "action.nextWeekImage",
                 "utterance": [
                   "mostr",
                   "me",
@@ -245,7 +420,7 @@
                 ]
               },
               {
-                "intent": "nextWeekImage",
+                "intent": "action.nextWeekImage",
                 "utterance": [
                   "o",
                   "calendari",
@@ -260,7 +435,7 @@
                 ]
               },
               {
-                "intent": "nextWeekImage",
+                "intent": "action.nextWeekImage",
                 "utterance": [
                   "o",
                   "que",
@@ -279,48 +454,163 @@
                 ]
               },
               {
-                "intent": "nextWeekImage",
+                "intent": "action.nextWeekImage",
                 "utterance": [
-                  "essa",
-                  "seman"
+                  "qua",
+                  "os",
+                  "prox",
+                  "event"
                 ],
                 "tokens": [
-                  "essa",
-                  "seman"
+                  "qua",
+                  "os",
+                  "prox",
+                  "event"
                 ]
               },
               {
-                "intent": "nextWeekImage",
+                "intent": "action.nextWeekImage",
                 "utterance": [
-                  "qua",
-                  "os",
-                  "prox",
+                  "calendari"
+                ],
+                "tokens": [
+                  "calendari"
+                ]
+              },
+              {
+                "intent": "action.nextMeetingLink",
+                "utterance": [
+                  "me",
+                  "de",
+                  "o",
+                  "link",
+                  "do",
+                  "proxim",
                   "event"
                 ],
                 "tokens": [
-                  "qua",
-                  "os",
-                  "prox",
+                  "me",
+                  "de",
+                  "o",
+                  "link",
+                  "do",
+                  "proxim",
                   "event"
+                ]
+              },
+              {
+                "intent": "action.nextMeetingLink",
+                "utterance": [
+                  "link",
+                  "da",
+                  "proxim",
+                  "reunia"
+                ],
+                "tokens": [
+                  "link",
+                  "da",
+                  "proxim",
+                  "reunia"
+                ]
+              },
+              {
+                "intent": "action.nextMeetingLink",
+                "utterance": [
+                  "quer",
+                  "sab",
+                  "da",
+                  "proxim",
+                  "reunia"
+                ],
+                "tokens": [
+                  "quer",
+                  "sab",
+                  "da",
+                  "proxim",
+                  "reunia"
+                ]
+              },
+              {
+                "intent": "action.nextMeetingLink",
+                "utterance": [
+                  "qual",
+                  "o",
+                  "proxim",
+                  "event"
+                ],
+                "tokens": [
+                  "qual",
+                  "o",
+                  "proxim",
+                  "event"
+                ]
+              },
+              {
+                "intent": "greeting",
+                "utterance": [
+                  "ola"
+                ],
+                "tokens": [
+                  "ola"
+                ]
+              },
+              {
+                "intent": "greeting",
+                "utterance": [
+                  "oi"
+                ],
+                "tokens": [
+                  "oi"
+                ]
+              },
+              {
+                "intent": "greeting",
+                "utterance": [
+                  "yo"
+                ],
+                "tokens": [
+                  "yo"
+                ]
+              },
+              {
+                "intent": "greeting",
+                "utterance": [
+                  "salv"
+                ],
+                "tokens": [
+                  "salv"
                 ]
               }
             ],
             "features": {
               "mostr": 1,
-              "me": 1,
-              "o": 3,
-              "calendari": 2,
+              "me": 2,
+              "o": 5,
+              "calendari": 3,
               "por": 1,
               "favor": 1,
               "que": 1,
               "vai": 1,
               "acontec": 1,
-              "essa": 2,
-              "seman": 2,
+              "essa": 1,
+              "seman": 1,
               "qua": 1,
               "os": 1,
               "prox": 1,
-              "event": 1
+              "event": 3,
+              "proxim": 4,
+              "de": 1,
+              "link": 2,
+              "do": 1,
+              "da": 2,
+              "reunia": 2,
+              "quer": 1,
+              "sab": 1,
+              "qual": 1,
+              "ola": 1,
+              "oi": 1,
+              "yo": 1,
+              "salv": 1
             },
             "isEditing": false,
             "className": "BrainNLU",
@@ -342,8 +632,8 @@
               "labels": [],
               "network": {
                 "sizes": [
-                  15,
-                  1
+                  28,
+                  3
                 ],
                 "layers": [
                   {
@@ -361,27 +651,119 @@
                     "qua": {},
                     "os": {},
                     "prox": {},
-                    "event": {}
+                    "event": {},
+                    "de": {},
+                    "link": {},
+                    "do": {},
+                    "proxim": {},
+                    "da": {},
+                    "reunia": {},
+                    "quer": {},
+                    "sab": {},
+                    "qual": {},
+                    "ola": {},
+                    "oi": {},
+                    "yo": {},
+                    "salv": {}
                   },
                   {
-                    "nextWeekImage": {
-                      "bias": 7.102723121643066,
+                    "action.nextWeekImage": {
+                      "bias": 3.377108097076416,
                       "weights": {
-                        "mostr": 2.324566602706909,
-                        "me": 2.324566602706909,
-                        "o": 3.5819790363311768,
-                        "calendari": 4.650784015655518,
-                        "por": 2.3262150287628174,
-                        "favor": 2.3262150287628174,
-                        "que": -1.0688029527664185,
-                        "vai": -1.0688029527664185,
-                        "acontec": -1.0688029527664185,
-                        "essa": 6.323365211486816,
-                        "seman": 6.323365211486816,
-                        "qua": 3.229667901992798,
-                        "os": 3.229667901992798,
-                        "prox": 3.229667901992798,
-                        "event": 3.229667901992798
+                        "mostr": 0.989969789981842,
+                        "me": -0.5410202741622925,
+                        "o": 0.43685171008110046,
+                        "calendari": 15.891351699829102,
+                        "por": 0.23159436881542206,
+                        "favor": 0.23159436881542206,
+                        "que": 3.2300779819488525,
+                        "vai": 3.2300779819488525,
+                        "acontec": 3.2300779819488525,
+                        "essa": 3.2300779819488525,
+                        "seman": 3.2300779819488525,
+                        "qua": 5.163812160491943,
+                        "os": 5.163812160491943,
+                        "prox": 5.163812160491943,
+                        "event": 1.1490132808685303,
+                        "de": -1.5309898853302002,
+                        "link": -1.6958670616149902,
+                        "do": -1.5309898853302002,
+                        "proxim": -4.391959190368652,
+                        "da": -0.37717118859291077,
+                        "reunia": -0.37717118859291077,
+                        "quer": -0.2122938334941864,
+                        "sab": -0.2122938334941864,
+                        "qual": -2.4837985038757324,
+                        "ola": -3.2924857139587402,
+                        "oi": -3.286994457244873,
+                        "yo": -3.2811317443847656,
+                        "salv": -3.2746057510375977
+                      }
+                    },
+                    "action.nextMeetingLink": {
+                      "bias": 0.7769451141357422,
+                      "weights": {
+                        "mostr": -1.1519899368286133,
+                        "me": -0.3475850224494934,
+                        "o": 2.568819284439087,
+                        "calendari": -1.9899544715881348,
+                        "por": -0.6778978705406189,
+                        "favor": -0.6778978705406189,
+                        "que": -0.6691612005233765,
+                        "vai": -0.6691612005233765,
+                        "acontec": -0.6691612005233765,
+                        "essa": -0.6691612005233765,
+                        "seman": -0.6691612005233765,
+                        "qua": -1.4611979722976685,
+                        "os": -1.4611979722976685,
+                        "prox": -1.4611979722976685,
+                        "event": 3.606673002243042,
+                        "de": 0.8044044375419617,
+                        "link": 3.0080509185791016,
+                        "do": 0.8044044375419617,
+                        "proxim": 8.78134822845459,
+                        "da": 3.7134881019592285,
+                        "reunia": 3.7134881019592285,
+                        "quer": 1.5098376274108887,
+                        "sab": 1.5098376274108887,
+                        "qual": 4.263461112976074,
+                        "ola": -0.7778381705284119,
+                        "oi": -0.7768911123275757,
+                        "yo": -0.7764375805854797,
+                        "salv": -0.7759516835212708
+                      }
+                    },
+                    "greeting": {
+                      "bias": 10.416098594665527,
+                      "weights": {
+                        "mostr": -0.7657508850097656,
+                        "me": -0.9291366338729858,
+                        "o": -3.5896878242492676,
+                        "calendari": -10.152888298034668,
+                        "por": -0.8036486506462097,
+                        "favor": -0.8036486506462097,
+                        "que": -1.3654769659042358,
+                        "vai": -1.3654769659042358,
+                        "acontec": -1.3654769659042358,
+                        "essa": -1.3654769659042358,
+                        "seman": -1.3654769659042358,
+                        "qua": -2.4404842853546143,
+                        "os": -2.4404842853546143,
+                        "prox": -2.4404842853546143,
+                        "event": -3.0952963829040527,
+                        "de": -0.16338564455509186,
+                        "link": -1.8261244297027588,
+                        "do": -0.16338564455509186,
+                        "proxim": -3.2976486682891846,
+                        "da": -2.6428353786468506,
+                        "reunia": -2.6428353786468506,
+                        "quer": -0.9800978302955627,
+                        "sab": -0.9800978302955627,
+                        "qual": -0.4914271831512451,
+                        "ola": 9.524658203125,
+                        "oi": 9.529763221740723,
+                        "yo": 9.520719528198242,
+                        "salv": 9.510929107666016
                       }
                     }
                   }
@@ -425,9 +807,19 @@
   "slotManager": {},
   "responses": {
     "pt": {
-      "nextWeekImage": [
+      "action.nextWeekImage": [
         {
           "response": "Um momento, vou verificar a agenda para você"
+        }
+      ],
+      "action.nextMeetingLink": [
+        {
+          "response": "Aqui está a descrição do próximo evento"
+        }
+      ],
+      "greeting": [
+        {
+          "response": "Olá, tudo bom?"
         }
       ]
     }

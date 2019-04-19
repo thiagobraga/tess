@@ -1,0 +1,16 @@
+# Schedule to every week
+tessModule: "telegraf"
+# week day ___________ 
+# month ____________  |
+# day ____________  | |
+# hour _________  | | |
+# minutes ____  | | | |
+# seconds __  | | | | | (optional)
+#           | | | | | |
+#          "* * * * * *"   
+schedule: "*/15 * * * * *" 
+tasks:
+  - script: "nextWeekImage"
+    parameters: # the order matters
+      chatId: -290369884 # chat ID
+      msg: "Testando envio de foto a cada 15 segundos" # message
