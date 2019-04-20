@@ -2,6 +2,9 @@
 Tess is the job/scheduler that use these functions to execute some task
 
 ## TODO
+[] Write tests
+[] Enable travis CI
+[] Install eslint
 [] Enable Logger through all the packages
 [] Setup page for Google API authentication
 [] Error Handling
