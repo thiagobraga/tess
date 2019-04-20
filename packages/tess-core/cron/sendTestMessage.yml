@@ -1,0 +1,19 @@
+tessModule: "telegraf"
+# Schedule to every week
+# week day ______________ 
+# month _______________  |
+# day _______________  | |
+# hour ____________  | | |
+# minutes _____    | | | |
+# seconds __   |   | | | |
+#           |  |   | | | |
+schedule: " */15 * * * * *" 
+tasks:
+  # - script: "sendMessage"
+  #   parameters: # the order matters
+  #     chatId: -290369884 # chat ID
+  #     msg: "Testando cron a cada 15 minutos" # message
+  - script: "sendMessage"
+    parameters: # the order matters
+      chatId: -382955383 # chat ID
+      msg: "Testando cron a cada 15 minutos" # message

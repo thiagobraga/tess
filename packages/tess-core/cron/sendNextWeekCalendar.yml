@@ -1,0 +1,16 @@
+# Schedule to every week
+tessModule: "telegraf"
+# week day ___________ 
+# month ____________  |
+# day ____________  | |
+# hour _________  | | |
+# minutes ____  | | | |
+# seconds __  | | | | | (optional)
+#           | | | | | |
+#          "* * * * * *"   
+schedule: "0 9 * * 1" 
+tasks:
+  - script: "nextWeekImage"
+    parameters: # the order matters
+      chatId: -290369884 # chat ID
+      msg: "E aí Djows, segue o calendário da semana" # message
