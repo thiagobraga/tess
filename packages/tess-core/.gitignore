@@ -1,0 +1,7 @@
+node_modules
+config.yaml
+static/*
+token.json
+credentials.json
+*/model.nlp
+npm-debug.log
