@@ -2,12 +2,12 @@
   "name": "tess",
   "version": "0.0.1",
   "description": "Tess is a robot helper that loves the human kind.",
+  "author": "",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "lerna": "^3.13.1"
   }
