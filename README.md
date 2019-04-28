@@ -73,3 +73,15 @@ You should see a simple 1 week calendar.
 You should have the same calendar as an image.
 - Interact with tess on Telegram.  
   `/tess events`
+
+## Roadmap
+
+- [ ] Write tests
+- [ ] Enable Travis CI
+- [ ] Install eslint
+- [ ] Enable Logger through all the packages
+- [ ] Setup page for Google API authentication
+- [ ] Error Handling
+- [ ] Persistence layer for job scheduler
+- [ ] Metrics
+- [ ] CSS improvements
