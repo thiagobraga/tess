@@ -2,31 +2,39 @@
 _Tess is a robot helper that loves the human kind._
 
 
-## Install lerna and bootstrap project
+## Dependencies
+
+- npm or yarn
+- Lerna
+
+## Install
+
 In the root repository:
 ```
-npm install
+yarn
 lerna bootstrap
 ```
 
-NOTE: This versions download headless chromium binary, just to make it easier to have the same environment accross differente workspaces. **It's 109.8 MB of extra download, keep this in mind.**
+> NOTE: This version download headless chromium binary, just to make it easier to have the same environment accross differente workspaces.
+>
+> It's **109.8 MB** of extra download, keep this in mind.
 
-## First Run
+### First Run
 
 Create a `credentials.json` file under tess-calendar package folder like the following template:
 ```
 {
-    "installed": {
-        "client_id":"SOME_ID",
-        "client_secret":"SOME_SECRET",
-        "redirect_uris": ["http://localhost"]
-    }
+  "installed": {
+    "client_id": "SOME_ID",
+    "client_secret": "SOME_SECRET",
+    "redirect_uris": ["http://localhost"]
+  }
 }
 ```
 
 Create your credentials on the [Google APIs console](https://console.developers.google.com/) to access your Google Calendar account read only permissions.
 
-Onde you have the credentials.json file, run the following script:
+Once you have the credentials.json file, run the following script:
 ```
 cd packages/tess-calendar
 node first_auth.js
@@ -41,7 +49,7 @@ That's temporary, really.
 
 Copy the code and paste it in the terminal. You will see that a list is loaded right after you finish the setup. If you see nothing or get an error, fill an issue.
 
-## Setting config.yaml for tess-core
+### Setting config.yaml for tess-core
 ```
 cd packages/tess-core
 cp config.example.yaml config.yaml
@@ -49,7 +57,7 @@ cp config.example.yaml config.yaml
 
 Add the Telegram token for under tess-telegraf service configuration.
 
-## Running after auth
+### Running after auth
 
 In the root repository
 ```
@@ -57,8 +65,11 @@ cd packages/tess-core
 npm start
 ```
 
-Go to http://localhost:3000/nextweek/html. You should see a simple 1 week calendar.
+## Usage
 
-Go to http://localhost:3000/nextweek/png. You should have the same calendar as an image.
-
-Interact with tess on Telegram.
+- http://localhost:3000/nextweek/html  
+You should see a simple 1 week calendar.
+- http://localhost:3000/nextweek/png  
+You should have the same calendar as an image.
+- Interact with tess on Telegram.  
+  `/tess events`

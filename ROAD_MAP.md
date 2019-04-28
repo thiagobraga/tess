@@ -2,11 +2,12 @@
 Tess is the job/scheduler that use these functions to execute some task
 
 ## TODO
-[] Write tests
-[] Enable travis CI
-[] Install eslint
-[] Enable Logger through all the packages
-[] Setup page for Google API authentication
-[] Error Handling
-[] Persistence layer for job scheduler
-[] Metrics
+- [ ] Write tests
+- [ ] Enable Travis CI
+- [ ] Install eslint
+- [ ] Enable Logger through all the packages
+- [ ] Setup page for Google API authentication
+- [ ] Error Handling
+- [ ] Persistence layer for job scheduler
+- [ ] Metrics
+- [ ] CSS improvements
