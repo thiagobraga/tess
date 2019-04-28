@@ -2,12 +2,9 @@
   "name": "tess-calendar",
   "version": "0.0.1",
   "description": "Tess is a robot helper that loves the human kind.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
+  "main": "index.js",
   "dependencies": {
     "domino": "^2.1.3",
     "googleapis": "^39.2.0",
