@@ -10,8 +10,14 @@ const readFile = promisify(fs.readFile);
 const getWeekHtml = async (events) => {
     events = await _parseEvents(events);
     const html = await readFile(`${path.join(__dirname, '../','assets/nextWeekCalendar.html')}`, {encoding: 'utf8'});
+    const css = await readFile(`${path.join(__dirname, '../','assets/nextWeekCalendar.css')}`, {encoding: 'utf8'});
 
     let doc = domino.createDocument(html);
+    let style = doc.createElement('style');
+    style.innerHTML = css;
+    let head = doc.querySelector('head');
+    head.appendChild(style)
+
     let calendar = doc.querySelector('.calendar');
     events.map((day, key) => {
         let column = doc.createElement('div');
