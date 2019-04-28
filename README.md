@@ -1,5 +1,19 @@
-# Tess
-_Tess is a robot helper that loves the human kind._
+<h1 align="center">Tess</h1>
+
+<p align="center">
+  🤖 Tess is a robot helper that loves the human kind.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/version-0.0.1-blue.svg" alt="Version 0.0.1">
+</p>
+
+<p align="center">
+  <a href="#dependencies">Dependencies</a> •
+  <a href="#install">Install</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#roadmap">Roadmap</a>
+</p>
 
 ## Dependencies
 
