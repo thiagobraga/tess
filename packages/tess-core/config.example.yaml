@@ -34,6 +34,6 @@ services:
     conf: 
       port: 3000
   - name: tess-telegraf
-    module: services/telegraf/app.js
+    module: modules/telegraf/app.js
     conf:
       token: "TELEGRAM_TOKEN"
