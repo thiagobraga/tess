@@ -97,4 +97,5 @@ You should have the same calendar as an image.
 - [ ] Persistence layer for job scheduler
 - [ ] Metrics
 - [ ] CSS improvements
+- [ ] Write instructions to create Telegram bot
 - [ ] Write instructions to interact with Tess on Telegram
