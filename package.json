@@ -2,13 +2,16 @@
   "name": "tess",
   "version": "0.0.1",
   "description": "Tess is a robot helper that loves the human kind.",
+  "author": "OpenTesseract",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OpenTesseract/tess"
+  },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "lerna": "^3.13.1"
   }

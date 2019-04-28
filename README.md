@@ -1,33 +1,54 @@
-# Tess
-_Tess is a robot helper that loves the human kind._
+<h1 align="center">Tess</h1>
 
+<p align="center">
+  🤖 Tess is a robot helper that loves the human kind.
+</p>
 
-## Install lerna and bootstrap project
+<p align="center">
+  <img src="https://img.shields.io/badge/version-0.0.1-blue.svg" alt="Version 0.0.1"> <a href="https://lerna.js.org" target="_blank" rel="nofollow noopener"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
+</p>
+
+<p align="center">
+  <a href="#dependencies">Dependencies</a> •
+  <a href="#install">Install</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#roadmap">Roadmap</a>
+</p>
+
+## Dependencies
+
+- [Yarn](https://yarnpkg.com/pt-BR/)
+- [Lerna](https://lerna.js.org/)
+
+## Install
+
 In the root repository:
-```
-npm install
+``` sh
+yarn
 lerna bootstrap
 ```
 
-NOTE: This versions download headless chromium binary, just to make it easier to have the same environment accross differente workspaces. **It's 109.8 MB of extra download, keep this in mind.**
+> NOTE: This version download headless chromium binary, just to make it easier to have the same environment accross different workspaces.
+>
+> It's **109.8 MB** of extra download, keep this in mind.
 
-## First Run
+### First Run
 
-Create a `credentials.json` file under tess-calendar package folder like the following template:
-```
+Create a `credentials.json` file under `tess-calendar` package folder like the following template:
+``` json
 {
-    "installed": {
-        "client_id":"SOME_ID",
-        "client_secret":"SOME_SECRET",
-        "redirect_uris": ["http://localhost"]
-    }
+  "installed": {
+    "client_id": "SOME_ID",
+    "client_secret": "SOME_SECRET",
+    "redirect_uris": ["http://localhost"]
+  }
 }
 ```
 
 Create your credentials on the [Google APIs console](https://console.developers.google.com/) to access your Google Calendar account read only permissions.
 
-Onde you have the credentials.json file, run the following script:
-```
+Once you have the `credentials.json` file, run the following script:
+``` sh
 cd packages/tess-calendar
 node first_auth.js
 ```
@@ -41,24 +62,39 @@ That's temporary, really.
 
 Copy the code and paste it in the terminal. You will see that a list is loaded right after you finish the setup. If you see nothing or get an error, fill an issue.
 
-## Setting config.yaml for tess-core
-```
+### Setting config.yaml for tess-core
+``` sh
 cd packages/tess-core
 cp config.example.yaml config.yaml
 ```
 
-Add the Telegram token for under tess-telegraf service configuration.
+Add the Telegram token for under `tess-telegraf` service configuration.
 
-## Running after auth
+### Running after auth
 
 In the root repository
-```
+``` sh
 cd packages/tess-core
-npm start
+yarn start
 ```
 
-Go to http://localhost:3000/nextweek/html. You should see a simple 1 week calendar.
+## Usage
 
-Go to http://localhost:3000/nextweek/png. You should have the same calendar as an image.
+- http://localhost:3000/nextweek/html  
+You should see a simple 1 week calendar.
+- http://localhost:3000/nextweek/png  
+You should have the same calendar as an image.
+- Interact with tess on Telegram.
 
-Interact with tess on Telegram.
+## Roadmap
+
+- [ ] Write tests
+- [ ] Enable Travis CI
+- [ ] Install eslint
+- [ ] Enable Logger through all the packages
+- [ ] Setup page for Google API authentication
+- [ ] Error Handling
+- [ ] Persistence layer for job scheduler
+- [ ] Metrics
+- [ ] CSS improvements
+- [ ] Write instructions to interact with Tess on Telegram
