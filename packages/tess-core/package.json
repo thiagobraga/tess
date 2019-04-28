@@ -1,0 +1,22 @@
+{
+  "name": "tess-core",
+  "version": "0.0.1",
+  "description": "Tess is a robot helper that loves the human kind.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:cron": "ENABLE_CRON=true node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "js-yaml": "^3.13.1",
+    "node-schedule": "^1.3.2",
+    "service-runner": "^2.6.17",
+    "tess-calendar": "^0.0.1",
+    "tess-nlp": "^0.0.1",
+    "tess-telegraf": "^0.0.1"
+  }
+}

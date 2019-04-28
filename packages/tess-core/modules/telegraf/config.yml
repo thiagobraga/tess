@@ -1,0 +1,51 @@
+# template #
+# actions:
+#  - type: "command"
+#    params: # the order of the params matters
+#    - name: "name_of_the_command" # without spaces
+#      script: "nextWeekImage" # name of the js file inside scripts folder
+
+actions:
+  - type: "help"
+    params:
+      script: "help"
+  - type: "command"
+    params:
+      name: "calendar"
+      script: "nextWeekImage"
+  - type: "command"
+    params:
+      name: "meeting"
+      script: "nextMeetingLink"
+  - type: "command"
+    params:
+      name: "dodo"
+      reply: "Catch a fire!"
+  - type: "command"
+    params:
+      name: "thiagao"
+      reply: "Não existe trabalho ruim, o ruim é ter que trabalhar (Seu Madruga)."
+  - type: "command"
+    params:
+      name: "mateus"
+      reply: "Aqui o peido é seco!"
+  - type: "command"
+    params:
+      name: "atchim"
+      reply: "Falar é fácil. Quero ver FALAR!"
+  - type: "command"
+    params:
+      name: "zord"
+      reply: "Chapado mas sempre ligado!"
+  - type: "command"
+    params:
+      name: "ceja"
+      reply: "Pede pra galera curtir!"
+  - type: "on"
+    params:
+      user: "message"
+      script: nlp-action
+  - type: "command"
+    params:
+      name: "tess"
+      script: nlp-action
