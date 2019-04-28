@@ -2,12 +2,9 @@
   "name": "tess-telegraf",
   "version": "0.0.1",
   "description": "Telegraf wrapper for tess",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
+  "main": "index.js",
   "dependencies": {
     "telegraf": "^3.28.0",
     "tess-calendar": "^0.0.1"

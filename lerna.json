@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
-  "npmClient": "npm",
+  "npmClient": "yarn",
+  "npmClientArgs": ["--production", "--no-optional"],
   "command": {
     "publish": {
       "ignoreChanges": ["ignored-file", "*.md"],
