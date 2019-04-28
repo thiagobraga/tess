@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.0.1-blue.svg" alt="Version 0.0.1">
+  <img src="https://img.shields.io/badge/version-0.0.1-blue.svg" alt="Version 0.0.1"> <a href="https://lerna.js.org" target="_blank" rel="nofollow noopener"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" /></a>
 </p>
 
 <p align="center">
